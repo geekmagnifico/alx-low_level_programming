@@ -12,16 +12,16 @@ int main(void)
 
 	while (lowercase <= 'z')
 	{
-        	putchar(lowercase);
-	lowercase++;
+		putchar(lowercase);
+		lowercase++;
 	}
 
-	while (uppercase <= 'Z') 
+	while (uppercase <= 'Z')
 	{
 	putchar(uppercase);
 	uppercase++;
 	}
 	putchar('\n');
 
-	return 0;
+	return (0);
 }
