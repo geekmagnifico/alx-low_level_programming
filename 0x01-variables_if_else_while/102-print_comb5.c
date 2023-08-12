@@ -7,7 +7,8 @@
  * All numbers should be printed with two digits.
  * The combination of numbers must be separated by comma, followed by a space.
  * The combinations of numbers should be printed in ascending order.
- * 00 01 and 01 00 are considered as the same combination of the numbers 0 and 1.
+ * 00 01 and 01 00 are considered
+ * as the same combination of the numbers 0 and 1.
  * You can only use the putchar function (every other function is forbidden).
  * You can only use putchar eight times maximum in your code.
  * You are not allowed to use any variable of type char.
@@ -35,8 +36,8 @@ int main(void)
 			}
 		}
 	}
-	
+
 	putchar('\n');
-	
+
 	return (0);
 }
