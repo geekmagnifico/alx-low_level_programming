@@ -5,21 +5,22 @@
  * and then in uppercase, followed by a new line.
  * Return: 0
  */
-int main(void) {
-    char lowercase = 'a';
-    char uppercase = 'A';
+int main(void) 
+{
+	char lowercase = 'a';
+	char uppercase = 'A';
 
-    while (lowercase <= 'z') {
-        putchar(lowercase);
+	while (lowercase <= 'z') 
+	{
+        	putchar(lowercase);
         lowercase++;
-    }
+	}
 
-     while (uppercase <= 'Z') {
+   	while (uppercase <= 'Z') {
         putchar(uppercase);
         uppercase++;
-    }
+    	}
+	putchar('\n');
 
-    putchar('\n');
-
-    return 0;
+	return 0;
 }
