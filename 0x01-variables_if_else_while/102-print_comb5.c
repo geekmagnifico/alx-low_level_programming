@@ -1,55 +1,43 @@
 #include <stdio.h>
-#include <stdlib.h>
 /**
- * main - main block
- * Description: Write a program that prints all possible
- * different combinations of two digits
- * Numbers must be separated by ,, followed by a space
- * The two digits must be different
- * 01 and 10 are considered the same combination of the two digits 0 and 1
- * Print only the smallest combination of two digits
- * Numbers should be printed in ascending order, with two digits
- * You can only use the putchar function
- * (every other function (printf, puts, etc…) is forbidden)
- * You can only use putchar five times maximum in your code
- * You are not allowed to use any variable of type char
- * All your code should be in the main function
- * Return: 0
+ * main - Prints all possible combinations of two two-digit numbers.
+ *
+ * Description: The numbers should range from 0 to 99.
+ * The two numbers should be separated by a space.
+ * All numbers should be printed with two digits.
+ * The combination of numbers must be separated by comma, followed by a space.
+ * The combinations of numbers should be printed in ascending order.
+ * 00 01 and 01 00 are considered as the same combination of the numbers 0 and 1.
+ * You can only use the putchar function (every other function is forbidden).
+ * You can only use putchar eight times maximum in your code.
+ * You are not allowed to use any variable of type char.
+ *
+ * Return: Always 0.
  */
 int main(void)
 {
-	int c;
-	int d;
-	int e = 0;
+	int num1, num2;
 
-	while (e < 10)
+	for (num1 = 0; num1 <= 99; num1++)
 	{
-		d = 0;
-		while (d < 10)
+		for (num2 = num1; num2 <= 99; num2++)
 		{
-			c = 0;
-			while (c < 10)
+			putchar('0' + (num1 / 10));
+			putchar('0' + (num1 % 10));
+			puttchar(' ');
+			putchar('0' + (num2 / 10));
+			putchar('0' + (num2 % 10));
+
+			if (num1 != 99 || num2 != 99)
 			{
-				if (c != d && d != e && e < d && d < c)
-				{
-					putchar('0' + e);
-					putchar('0' + d);
-					putchar('0' + c);
-
-					if (c + d + e != 9 + 8 + 7)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-				}
-
-				c++;
+				putchar(',');
+				putchar(' ');
 			}
-			d++;
 		}
-		e++;
 	}
+	
 	putchar('\n');
+	
 	return (0);
 }
 
