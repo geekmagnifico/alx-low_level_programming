@@ -24,7 +24,7 @@ int main(void)
 		{
 			putchar('0' + (num1 / 10));
 			putchar('0' + (num1 % 10));
-			puttchar(' ');
+			putchar(' ');
 			putchar('0' + (num2 / 10));
 			putchar('0' + (num2 % 10));
 
@@ -40,4 +40,3 @@ int main(void)
 	
 	return (0);
 }
-
