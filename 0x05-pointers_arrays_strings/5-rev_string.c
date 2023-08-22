@@ -2,29 +2,27 @@
 
 /**
  * rev_string - reverses a string
- * @s: string to reverse
+ * @s: string to be reversed
  */
+void rev_string(char *s)
+{
+	char tmp;
+	int i, len, len1;
 
-void rev_string(char *s) {
-	if (s == NULL) {
-		return; // Handle NULL input
+	len = 0;
+	len1 = 0;
+
+	while (s[len] != '\0')
+	{
+		len++;
 	}
 
-	char *start = s;
-	char *end = s;
+	len1 = len - 1;
 
-	while (*end) {
-		++end;
-	}
-	--end;
-
-	while (start < end) {
-		char temp = *start;
-		*start = *end;
-		*end = temp;
-
-		++start;
-		--end;
+	for (i = 0; i < len / 2; i++)
+	{
+		tmp = s[i];
+		s[i] = s[len1];
+		s[len1--] = tmp;
 	}
 }
-
