@@ -6,25 +6,25 @@
  * @src: string to add
  *
  * Return: a pointer to the resulting string
+ *
  */
 char *_strcat(char *dest, char *src)
 {
-	int i, j;
+	char *originalDest = dest;
 
-	i = 0;
-	j = 0;
-
-	while (dest[i] != '\0')
-		i++;
-
-	while (src[j] != '\0')
+	/* Move dest pointer to the end of the destination string*/
+	while (*dest) 
 	{
-		dest[i] = src[j];
-		j++;
-		i++;
+		dest++;
 	}
 
-	dest[i] = '\0';
+    /* Copy characters from src to dest*/
+	while (*src) 
+	{
+		*dest++ = *src++;
+	}
 
-	return (dest);
+	*dest = '\0'; // Add null terminator
+
+	return originalDest;
 }
