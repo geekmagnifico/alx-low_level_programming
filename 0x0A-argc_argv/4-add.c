@@ -2,29 +2,29 @@
 #include <stdlib.h>
 
 /**
- * main -  multiplies two numbers.
- * print the result of the multiplication, followed by a new line
- * @argc: number of arguments
- * @argv: array of characters(to be converted to int)
+ * main - adds positive numbers.
+ * Print the result, followed by a new line
+ * @argc: number of arguments passed to program.
+ * @argv: array of pointer to arguments.
  *
- * Return: 1 if number of argc is not 3, or 0 at success.
+ * Return: 1 if  number contains symbols that are not digits.
+ *       : 0 at success.
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[]) 
 {
-	int num1, num2, result;
-
-	if (argc != 3)
+	if (argc != 3) 
 	{
 		printf("Error\n");
-		return (1);
+		return 1;
 	}
+	int num1 = atoi(argv[1]);
+	int num2 = atoi(argv[2]);
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2]);
-	/* atoi converts a character string to an integer value */
-	result = num1 * num2;
+	int result = num1 * num2;
 
 	printf("%d\n", result);
-	return (0);
+
+    return 0;
 }
+
