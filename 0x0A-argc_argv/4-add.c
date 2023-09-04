@@ -1,41 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
- * main - Adds positive numbers.
- *
- * This program takes multiple command-line arguments (numbers) and adds them together.
- *
- * @argc: The number of arguments passed to the program.
- * @argv: An array of pointers to the arguments.
- *
- * Return: 0 if successful, 1 if any argument contains symbols that are not digits.
+ * main - function to add variables
+ * @argc: number of arguments
+ * @argv: arguments being passed
+ * Return: Always 0 or 1
  */
-
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	 int num, result = 0, digit;
+	int a, b, addition;
 
-	if (argc < 2)
- 	{
-		printf("Error\n");
-		return 1;
-	}
-
-	for (num = 1; num < argc; num++)
+	for (a = 1; a < argc; a++)
 	{
-		for (digit = 0; argv[num][digit]; digit++)
+		for (b = 0; argv[a][b] != '\0'; b++)
 		{
-			if (argv[num][digit] < '0' || argv[num][digit] > '9')
+			if (!isdigit(argv[a][b]))
 			{
 				printf("Error\n");
-				return 1;
+				return (1);
 			}
-        	}
-		result += atoi(argv[num]);
+		}
+		addition = addition + atoi(argv[a]);
 	}
-
-	printf("%d\n", result);
-	return 0;
+	printf("%i\n", addition);
+	return (0);
 }
-
