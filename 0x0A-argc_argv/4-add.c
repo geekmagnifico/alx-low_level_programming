@@ -2,29 +2,40 @@
 #include <stdlib.h>
 
 /**
- * main - adds positive numbers.
- * Print the result, followed by a new line
- * @argc: number of arguments passed to program.
- * @argv: array of pointer to arguments.
+ * main - Adds positive numbers.
  *
- * Return: 1 if  number contains symbols that are not digits.
- *       : 0 at success.
+ * This program takes multiple command-line arguments (numbers) and adds them together.
+ *
+ * @argc: The number of arguments passed to the program.
+ * @argv: An array of pointers to the arguments.
+ *
+ * Return: 0 if successful, 1 if any argument contains symbols that are not digits.
  */
 
-int main(int argc, char *argv[]) 
+int main(int argc, char *argv[])
 {
-	if (argc != 3) 
-	{
+	 int num, result = 0, digit;
+
+	if (argc < 2)
+ 	{
 		printf("Error\n");
 		return 1;
 	}
-	int num1 = atoi(argv[1]);
-	int num2 = atoi(argv[2]);
 
-	int result = num1 * num2;
+	for (num = 1; num < argc; num++)
+	{
+		for (digit = 0; argv[num][digit]; digit++)
+		{
+			if (argv[num][digit] < '0' || argv[num][digit] > '9')
+			{
+				printf("Error\n");
+				return 1;
+			}
+        	}
+		result += atoi(argv[num]);
+	}
 
 	printf("%d\n", result);
-
-    return 0;
+	return 0;
 }
 
