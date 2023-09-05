@@ -1,38 +1,29 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * string_nconcat - function that concatenates two strings
- * @s1: string one being passed
- * @s2: string two being passed
- * @n: size
- * Return: Always 0.
+ *_strdup - returns a pointer to a newly allocated space in memory.
+ *@str: string.
+ *Return: pointer of an array of chars
  */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+char *_strdup(char *str)
 {
-	char *p;
-	unsigned int a, b, c, d;
+	char *strout;
+	unsigned int i, j;
 
-	if (s1 == 0)
-		s1 = "";
-	if (s2 == 0)
-		s2 = "";
-	for (a = 0; s1[a] != '\0'; a++)
-		;
-	for (b = 0; s2[b] != '\0'; b++)
-		;
-	if (n > b)
-		p = malloc((a + b + 1) * sizeof(char));
-	else
-		p = malloc((a + n + 1) * sizeof(char));
-	if (p == 0)
+	if (str == NULL)
 		return (NULL);
 
-	for (c = 0; c < a; c++)
-		p[c] = s1[c];
-	for (d = 0; d < n && d < b; d++, c++)
-		p[c] = s2[d];
-	p[c] = '\0';
-	return (p);
+	for (i = 0; str[i] != '\0'; i++)
+		;
+
+	strout = (char *)malloc(sizeof(char) * (i + 1));
+
+	if (strout == NULL)
+		return (NULL);
+
+	for (j = 0; j <= i; j++)
+		strout[j] = str[j];
+
+	return (strout);
 }
