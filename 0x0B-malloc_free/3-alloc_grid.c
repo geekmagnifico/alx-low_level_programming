@@ -1,25 +1,43 @@
-#include "holberton.h"
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
 
 /**
- * array_range - function that creates an array of integers
- * @min: the address of memory to print
- * @max: the size of the memory to print
- *
- * Return: Nothing.
+ * alloc_grid - returns a pointer to a 2 dimensional array of integers.
+ * @width: width of the array.
+ * @height: height of the array.
+ * Return: pointer of an array of integers
  */
-int *array_range(int min, int max)
+int **alloc_grid(int width, int height)
 {
-	int a;
-	int *p;
 
-	if (min > max)
-		return (NULL);
-	p = malloc(sizeof(int) * (max - min + 1));
-	if (p == 0)
-		return (NULL);
-	for (a = 0; min <= max; min++, a++)
-		p[a] = min;
-	return (p);
+int **gridout;
+int i, j;
+
+if (width < 1 || height < 1)
+return (NULL);
+
+gridout = malloc(height * sizeof(int *));
+if (gridout == NULL)
+{
+free(gridout);
+return (NULL);
+}
+
+for (i = 0; i < height; i++)
+{
+gridout[i] = malloc(width * sizeof(int));
+if (gridout[i] == NULL)
+{
+for (i--; i >= 0; i--)
+free(gridout[i]);
+free(gridout);
+return (NULL);
+}
+}
+
+for (i = 0; i < height; i++)
+for (j = 0; j < width; j++)
+gridout[i][j] = 0;
+
+return (gridout);
 }
