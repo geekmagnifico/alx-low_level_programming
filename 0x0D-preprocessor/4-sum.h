@@ -2,8 +2,7 @@
 #define SUM_H
 
 /*
- * Auth: Rosita J Uqueio
- * Desc: function-like macro SUM(x, y) that
+  * Desc: function-like macro SUM(x, y) that
  *       computes the sum of the numbers x and y.
  */
 
