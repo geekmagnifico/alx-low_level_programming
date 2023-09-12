@@ -15,6 +15,7 @@ struct dog
 	char *name;
 	float age;
 	char *owner;
+/*this is a struc for dog */	
 };
 
 #endif
